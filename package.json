@@ -1,0 +1,16 @@
+{
+  "name": "get-data",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "firebase": "^11.6.1",
+    "serialport": "^13.0.0"
+  }
+}
