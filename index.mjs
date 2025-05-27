@@ -17,7 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const serialport = new SerialPort({ path: '/dev/tty.usbserial-240', baudRate: 9600, autoOpen: false, flowControl: false });
+const serialport = new SerialPort({ path: '/dev/cu.usbserial-240', baudRate: 9600, autoOpen: false, flowControl: false });
 const parser = serialport.pipe(new ReadlineParser({ delimiter: '\r\n'}));
 
 let missionName;
