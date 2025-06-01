@@ -1,21 +1,5 @@
 import { ReadlineParser, SerialPort } from 'serialport';
 import { createInterface } from 'readline';
-import { initializeApp } from 'firebase/app';
-import { doc, getDoc, getFirestore, setDoc } from 'firebase/firestore';
-
-import 'dotenv/config';
-
-const firebaseConfig = {
-    apiKey: process.env.API_KEY,
-    authDomain: process.env.AUTH_DOMAIN,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORAGE_BUCKET,
-    messagingSenderId: process.env.MESSAGING_SENDER_ID,
-    appId: process.env.APP_ID,
-}
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 const serialport = new SerialPort({ path: '/dev/cu.usbserial-240', baudRate: 9600, autoOpen: false, flowControl: false });
 const parser = serialport.pipe(new ReadlineParser({ delimiter: '\r\n'}));
